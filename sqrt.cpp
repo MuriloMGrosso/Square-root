@@ -1,41 +1,52 @@
+/* 
+
+By Murilo M. Grosso
+
+*/
+
 #include<iostream>
 
-float sqrt(float n)
+double sqrt(float n);
+
+int main()
 {
-    float start = 0;
-    float end = n;
-    float res = 1;
+    double n;
+
+    std::cout << std::endl << "> SQUARE ROOT <" << std::endl;
+    std::cout << std::endl << "Insert a number: ";
+
+    std::cin >> n;
+
+    std::cout << "\nResult: " << sqrt(n) << std::endl << std::endl;
+
+    std::cin.get();
+
+    return 0;
+}
+
+double sqrt(float n)
+{
+    const double step = 1e-06;
+    double start = 0;
+    double end = n;
+    double res = 1;
 
     while (start <= end)
     {
-        float mid = (start + end)/2;
+        double mid = (start + end)/2;
         if(n < mid*mid)
         {
-            end = mid - 0.00001;
+            end = mid - step;
             continue;
         }
         res = mid;
         if(n > mid*mid)
         {
-            start = mid + 0.00001;
+            start = mid + step;
             continue;
         }
         break;
     }
 
     return res;
-}
-
-int main()
-{
-    float n;
-
-    std::cout << "\nSQUARE ROOT OF N" << std::endl;
-    std::cout << "\nInsert n: ";
-    std::cin >> n;
-    std::cout << "\nResult: " << sqrt(n) << std::endl;
-
-    std::cin.get();
-
-    return 0;
 }
