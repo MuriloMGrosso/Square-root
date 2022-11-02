@@ -1,7 +1,6 @@
 /* 
-
-By Murilo M. Grosso
-
+    This program was made for academic purposes, feel free to use it.
+    By Murilo M. Grosso - 2022
 */
 
 #include<iostream>
